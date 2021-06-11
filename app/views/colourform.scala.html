@@ -1,0 +1,16 @@
+@import helper._
+
+
+@(colourForm: Form[ColourFormModel])(implicit messages: Messages)
+
+@main("Favourite Colour") {
+<h1>Select your favourites colours</h1>
+
+@helper.form(action = routes.FormController.submitColourForm) {
+
+
+@inputCheckboxGroup(colourForm("colour"), options = Seq("red" -> "red", "green" -> "green", "blue" -> "blue"), 'required -> "required")
+
+<input type="submit" value="Submit">
+}
+}

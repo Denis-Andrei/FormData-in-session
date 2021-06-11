@@ -1,0 +1,13 @@
+@import helper._
+
+
+@(name: Form[NameFormModel])(implicit messages: Messages)
+
+@main("Name Form") {
+<h1>Introduce your name</h1>
+
+@helper.form(action = routes.FormController.submitNameForm) {
+@inputText(name("name"), 'required -> "required")
+<input type="submit" value="Submit">
+}
+}
